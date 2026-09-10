@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Axion — Create account</title>
+<meta name="description" content="Create your Axion account." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="orb orb--a" aria-hidden="true"></div>
+  <div class="orb orb--b" aria-hidden="true"></div>
+  <div class="orb orb--c" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="auth-shell">
+    <div class="auth-card page-enter" id="card">
+
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <defs>
+              <linearGradient id="lg1" x1="0" y1="0" x2="48" y2="48">
+                <stop offset="0" stop-color="#5b7cff"/>
+                <stop offset="1" stop-color="#9d6bff"/>
+              </linearGradient>
+            </defs>
+            <circle class="ring" cx="24" cy="24" r="20" stroke="url(#lg1)" stroke-width="1.4" stroke-dasharray="6 7" opacity="0.6"/>
+            <path d="M24 10 L36 31 H12 Z" fill="url(#lg1)" opacity="0.9"/>
+            <circle cx="24" cy="24" r="3.4" fill="#eef0f8"/>
+          </svg>
+        </div>
+        <p class="brand-name">Axion</p>
+      </div>
+
+      <section class="view" id="view-register">
+        <div class="view-head">
+          <h1>Create your account</h1>
+          <p>Join us and start your journey.</p>
+        </div>
+
+        <div class="form-banner" id="register-banner" role="alert">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11a.75.75 0 00-1.5 0v4a.75.75 0 001.5 0V7zm-.75 6.5a.9.9 0 100 1.8.9.9 0 000-1.8z" clip-rule="evenodd"/></svg>
+          <span>Something went wrong. Please try again.</span>
+        </div>
+
+        <form id="register-form" novalidate>
+          <div class="field" data-field="name">
+            <div class="field-shell">
+              <span class="field-icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="6.5" r="3.2"/><path d="M3.5 17c0-3.3 2.9-5.5 6.5-5.5s6.5 2.2 6.5 5.5" stroke-linecap="round"/></svg>
+              </span>
+              <input class="field-input" type="text" id="reg-name" name="name" placeholder=" " autocomplete="name" required />
+              <label class="field-label" for="reg-name">Full name</label>
+              <span class="field-status" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <span class="field-error" id="reg-name-err" role="alert">Please enter your name.</span>
+          </div>
+
+          <div class="field" data-field="email">
+            <div class="field-shell">
+              <span class="field-icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5.5h14a1 1 0 011 1v7a1 1 0 01-1 1H3a1 1 0 01-1-1v-7a1 1 0 011-1z"/><path d="M2.4 6l7.6 5.5L17.6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <input class="field-input" type="email" id="reg-email" name="email" placeholder=" " autocomplete="email" required />
+              <label class="field-label" for="reg-email">Email address</label>
+              <span class="field-status" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <span class="field-error" id="reg-email-err" role="alert">Please enter a valid email address.</span>
+          </div>
+
+          <div class="field" data-field="username">
+            <div class="field-shell">
+              <span class="field-icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l12 6-12 6V4z" stroke-linejoin="round"/></svg>
+              </span>
+              <input class="field-input" type="text" id="reg-username" name="username" placeholder=" " autocomplete="username" />
+              <label class="field-label" for="reg-username">Username <span style="opacity:.6">(optional)</span></label>
+            </div>
+          </div>
+
+          <div class="field" data-field="password">
+            <div class="field-shell">
+              <span class="field-icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="9" width="12" height="8" rx="1.6"/><path d="M6.5 9V6.5a3.5 3.5 0 017 0V9" stroke-linecap="round"/></svg>
+              </span>
+              <input class="field-input" type="password" id="reg-password" name="password" placeholder=" " autocomplete="new-password" required aria-describedby="reg-req-list" />
+              <label class="field-label" for="reg-password">Password</label>
+              <button class="field-action" type="button" data-toggle-pass="reg-password" aria-label="Show password" aria-pressed="false">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1.5 10S4.5 4.5 10 4.5 18.5 10 18.5 10 15.5 15.5 10 15.5 1.5 10 1.5 10z"/><circle cx="10" cy="10" r="2.4"/></svg>
+              </button>
+            </div>
+            <span class="field-error" id="reg-password-err" role="alert">Your password doesn't meet the requirements yet.</span>
+          </div>
+
+          <div class="strength" id="strength" data-level="0">
+            <div class="strength-bar"><span></span><span></span><span></span><span></span></div>
+            <div class="strength-label" id="strength-label">Password strength</div>
+            <ul class="req-list" id="reg-req-list">
+              <li data-req="len"><span class="dot"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 4l2 2 4-4"/></svg></span>At least 8 characters</li>
+              <li data-req="upper"><span class="dot"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 4l2 2 4-4"/></svg></span>One uppercase letter</li>
+              <li data-req="lower"><span class="dot"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 4l2 2 4-4"/></svg></span>One lowercase letter</li>
+              <li data-req="number"><span class="dot"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 4l2 2 4-4"/></svg></span>One number</li>
+              <li data-req="special"><span class="dot"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 4l2 2 4-4"/></svg></span>One special character</li>
+            </ul>
+          </div>
+
+          <div class="field" data-field="confirm">
+            <div class="field-shell">
+              <span class="field-icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="9" width="12" height="8" rx="1.6"/><path d="M6.5 9V6.5a3.5 3.5 0 017 0V9" stroke-linecap="round"/></svg>
+              </span>
+              <input class="field-input" type="password" id="reg-confirm" name="confirm" placeholder=" " autocomplete="new-password" required />
+              <label class="field-label" for="reg-confirm">Confirm password</label>
+              <span class="field-status" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <span class="field-error" id="reg-confirm-err" role="alert">Passwords do not match.</span>
+          </div>
+
+          <label class="checkbox" style="align-items:flex-start;">
+            <input type="checkbox" id="reg-terms" name="terms" required />
+            <span class="checkbox-box" aria-hidden="true" style="margin-top:1px;">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l2.5 2.5L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>I agree to the <a href="#" class="link" onclick="event.stopPropagation()">Terms</a> and <a href="#" class="link" onclick="event.stopPropagation()">Privacy Policy</a></span>
+          </label>
+          <span class="field-error" id="reg-terms-err" role="alert" style="margin-top:-8px;">You need to accept the terms to continue.</span>
+
+          <button class="btn" type="submit" id="register-submit">
+            <span class="btn-label">Create account</span>
+            <span class="spinner" aria-hidden="true"></span>
+            <svg class="check-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <p class="view-foot">Already have an account? <a href="index.html" class="link link--accent" data-transition>Sign in</a></p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/background.js"></script>
+  <script src="js/auth-service.js"></script>
+  <script src="js/ui-helpers.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
